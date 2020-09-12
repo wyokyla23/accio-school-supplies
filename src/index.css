@@ -1,3 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&display=swap");
+
 body {
   margin: 0;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "BilboSwashCaps";
+}
+
+.invitation {
+  background: url("./Images/envelope2.jpg")
+    no-repeat center;
+  background-size: auto;
+  border: solid;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.letter-seal {
+  /* border: solid; */
+  padding-bottom: 50px;
+  margin-top: -300px;
+}
+
+.name-form {
+  margin: 25px;
+  border: groove;
+}
+
+.schoolList {
+  background: url("./Images/paper-background2.jpg");
+  font-size: 17px;
+  font-weight: bold;
+}
+
+ol li {
+  margin-top: 20px;
+  list-style-type: none;
+}
+
+button {
+  margin: 25px;
+  padding: 5px;
+}
+
+button:hover {
+  background-color: #7f0909;
+  color: #ffc500;
+}
+
+.shop-content {
+  height: 100vh;
+}
+.shop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  background-color: #7f0909;
+  box-shadow: 0px 2px 10px -5px rgba(21, 6, 5, 1);
+  color: white;
 }
