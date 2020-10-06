@@ -2,9 +2,9 @@ import React from "react";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Checkbox from "@material-ui/core/Checkbox";
 import cat from "../Images/Shop-Images/cat.jpg";
-// import cauldron1 from "../Images/Shop-Images/cauldron1.jpg";
-// import cauldron2 from "../Images/Shop-Images/cauldron2.jpg";
-// import cauldron3 from "../Images/Shop-Images/cauldron3.jpg";
+import cauldron1 from "../Images/Shop-Images/cauldron1.jpg";
+import cauldron2 from "../Images/Shop-Images/cauldron2.jpg";
+import cauldron3 from "../Images/Shop-Images/cauldron3.jpg";
 // import necklace from "../Images/Shop-Images/cursed-necklace.jpg";
 // import deluminator from "../Images/Shop-Images/deluminator.jpg";
 // import felix from "../Images/Shop-Images/felix-felicis.jpg";
@@ -29,9 +29,8 @@ import mcgonagallWand from "../Images/wands/mcgonagall-wand1.png";
 // import slytherin from "../Images/Shop-Images/slytherin-robe.jpg";
 import snapeWand from "../Images/wands/snape-wand1.png";
 import owl from "../Images/Shop-Images/snowy-owl.jpg";
-// import telescope1 from "../Images/Shop-Images/telescope1.jpg";
-// import telescope2 from "../Images/Shop-Images/telescope2.jpg";
-// import telescope3 from "../Images/Shop-Images/telescope3.jpg";
+import telescope1 from "../Images/Shop-Images/telescope1.jpg";
+import telescope2 from "../Images/Shop-Images/telescope2.png";
 // import timeTurner from "../Images/Shop-Images/time-turner.jpeg";
 import toad from "../Images/Shop-Images/toad.jpg";
 
@@ -47,7 +46,7 @@ const shoppingList = [
     name: "wand",
     url: `${hermioneWand}`,
     description: "derp",
-    price: 20,
+    price: 25,
     id: 2,
   },
   {
@@ -78,6 +77,41 @@ const shoppingList = [
     price: 20,
     id: 6,
   },
+  {
+    name: "cauldron",
+    url: `${cauldron1}`,
+    description: "derp",
+    price: 20,
+    id: 7,
+  },
+  {
+    name: "cauldron",
+    url: `${cauldron2}`,
+    description: "derp",
+    price: 20,
+    id: 8,
+  },
+  {
+    name: "cauldron",
+    url: `${cauldron3}`,
+    description: "derp",
+    price: 20,
+    id: 9,
+  },
+  {
+    name: "telescope",
+    url: `${telescope1}`,
+    description: "derp",
+    price: 20,
+    id: 9,
+  },
+  {
+    name: "telescope",
+    url: `${telescope2}`,
+    description: "derp",
+    price: 20,
+    id: 9,
+  },
 ];
 
 export default function Shop(props) {
@@ -88,7 +122,7 @@ export default function Shop(props) {
         <h2>Accio School Supplies</h2>
         <ShoppingCartIcon />
       </header>
-      <ol>
+      <ol className="shop-list">
         <li>
           1 WAND <Checkbox />
         </li>
@@ -107,8 +141,7 @@ export default function Shop(props) {
           1 SET OF BRASS SCALES <Checkbox />
         </li>
         <li>
-          STUDENTS MAY ALSO BRING AN OWL, A CAT,
-          OR A TOAD <Checkbox />
+          AN OWL, A CAT, OR A TOAD <Checkbox />
         </li>
       </ol>
       <div className="images-wrapper">
@@ -119,7 +152,12 @@ export default function Shop(props) {
             style={{
               backgroundImage: `url(${item.url})`,
             }}
-          />
+          >
+            <div className="item-content">
+              <h4>{item.description}</h4>
+              <h4> ${item.price}</h4>
+            </div>
+          </div>
         ))}
       </div>
     </div>

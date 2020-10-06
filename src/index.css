@@ -30,7 +30,18 @@ body {
 
 .name-form {
   margin: 25px;
+  padding: 10px;
+  border-radius: 7px;
   border: groove;
+}
+
+.name-form:focus {
+  outline: none;
+}
+
+.name-button {
+  border-radius: 25px;
+  padding: 5px 16px;
 }
 
 .schoolList {
@@ -67,26 +78,52 @@ button:hover {
   color: white;
 }
 
-ol {
+.shop-list {
   display: flex;
   justify-content: space-around;
+  border-bottom: 1px solid;
+  padding-bottom: 20px;
 }
 
 .images-wrapper {
   display: flex;
   flex-wrap: wrap;
   height: 100vh;
-  background-color: lightgrey;
+
   /* border: solid; */
 }
 
 .image {
-  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  border: 15px solid white;
   /* height: 224px;
   width: 224px; */
   width: 25%;
   box-sizing: border-box;
-  margin-top: 50px;
+  margin-top: 5px;
+  padding-top: 350px;
   background-repeat: no-repeat;
   background-position: center;
+  background-color: rgb(211, 211, 211, 0.4);
+}
+
+.item-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fadeVisibility {
+  animation: fadeVisibility 3s;
+}
+
+@keyframes fadeVisibility {
+  100% {
+    opacity: 0;
+  }
+  0% {
+    opacity: 1;
+  }
 }

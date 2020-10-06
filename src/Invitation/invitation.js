@@ -19,11 +19,11 @@ export default function Invitation({
 
   return (
     <div className="invitation layout">
-      <img
+      {/* <img
         className="letter-seal"
         src={require("../Images/letterSeal.png")}
         alt="Hogwarts Letter Seal"
-      />
+      /> */}
       <form onSubmit={handleSubmit}>
         <label>
           To Whom It May Concern:
@@ -36,7 +36,11 @@ export default function Invitation({
             required
           />
         </label>
-        <button type="submit" value="Submit">
+        <button
+          class="name-button"
+          type="submit"
+          value="Submit"
+        >
           Submit
         </button>
       </form>
