@@ -34,12 +34,15 @@ import telescope2 from "../Images/Shop-Images/telescope2.png";
 // import timeTurner from "../Images/Shop-Images/time-turner.jpeg";
 import toad from "../Images/Shop-Images/toad.jpg";
 
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+
 const shoppingList = [
   {
     name: "wand",
     url: `${harryWand}`,
-    description: "derp",
-    price: 20,
+    description:
+      "11 inches long. Made of holly. Possesses a phoenix feather core",
+    price: 10,
     id: 1,
   },
   {
@@ -124,24 +127,40 @@ export default function Shop(props) {
       </header>
       <ol className="shop-list">
         <li>
-          1 WAND <Checkbox />
+          1 WAND{" "}
+          <Checkbox
+            style={{ color: "#7f0909" }}
+          />
         </li>
         <li>
           1 CAULDRON (PEWTER, STANDARD SIZE 2){" "}
-          <Checkbox />
+          <Checkbox
+            style={{ color: "#7f0909" }}
+          />
         </li>
         <li>
           1 SET OF GLASS OR CRYSTAL PHIALS{" "}
-          <Checkbox />
+          <Checkbox
+            style={{ color: "#7f0909" }}
+          />
         </li>
         <li>
-          1 TELESCOPE <Checkbox />
+          1 TELESCOPE{" "}
+          <Checkbox
+            style={{ color: "#7f0909" }}
+          />
         </li>
         <li>
-          1 SET OF BRASS SCALES <Checkbox />
+          1 SET OF BRASS SCALES{" "}
+          <Checkbox
+            style={{ color: "#7f0909" }}
+          />
         </li>
         <li>
-          AN OWL, A CAT, OR A TOAD <Checkbox />
+          AN OWL, A CAT, OR A TOAD{" "}
+          <Checkbox
+            style={{ color: "#7f0909" }}
+          />
         </li>
       </ol>
       <div className="images-wrapper">
@@ -153,9 +172,14 @@ export default function Shop(props) {
               backgroundImage: `url(${item.url})`,
             }}
           >
-            <div className="item-content">
-              <h4>{item.description}</h4>
-              <h4> ${item.price}</h4>
+            <div className="content-wrapper">
+              <div className="item-content heart-icon">
+                <FavoriteBorderIcon />
+              </div>
+              <div className="item-content item-description">
+                <p>{item.description}</p>
+                <p>${item.price}</p>
+              </div>
             </div>
           </div>
         ))}
