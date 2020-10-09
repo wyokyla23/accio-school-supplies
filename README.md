@@ -1,7 +1,12 @@
 # Accio School Supplies (Still in Progress)
 A list to guide you as you shop and add items to your shopping cart.
+* React
+* React Hooks
+* Material-UI
 
+![2020-10-08 (8)](https://user-images.githubusercontent.com/62663716/95537123-7ebbd600-09b2-11eb-93a5-d435f675eeff.png)
 
+![2020-10-08 (9)](https://user-images.githubusercontent.com/62663716/95537139-89766b00-09b2-11eb-9ae0-39dc8b58644a.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
