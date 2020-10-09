@@ -1,3 +1,8 @@
+# Accio School Supplies (Still in Progress)
+A list to guide you as you shop and add items to your shopping cart.
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
