@@ -6,7 +6,7 @@ A list to guide you as you shop and add items to your shopping cart.
 
 ![2020-10-08 (8)](https://user-images.githubusercontent.com/62663716/95537123-7ebbd600-09b2-11eb-93a5-d435f675eeff.png)
 
-![2020-10-08 (9)](https://user-images.githubusercontent.com/62663716/95537139-89766b00-09b2-11eb-9ae0-39dc8b58644a.png)
+![2020-10-18](https://user-images.githubusercontent.com/62663716/96388482-b1ae5880-116e-11eb-97aa-290c924b6a62.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
