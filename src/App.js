@@ -21,6 +21,7 @@ export default function App() {
           <SchoolList name={name} />
         </Route>
         <Route exact path="/shop">
+
           <Shop />
         </Route>
       </Switch>

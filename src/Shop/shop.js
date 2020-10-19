@@ -1,129 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
+
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import Grid from '@material-ui/core/Grid'
+import IconButton from '@material-ui/core/IconButton';
 import Checkbox from "@material-ui/core/Checkbox";
-import cat from "../Images/Shop-Images/cat.jpg";
-import cauldron1 from "../Images/Shop-Images/cauldron1.jpg";
-import cauldron2 from "../Images/Shop-Images/cauldron2.jpg";
-import cauldron3 from "../Images/Shop-Images/cauldron3.jpg";
-// import necklace from "../Images/Shop-Images/cursed-necklace.jpg";
-// import deluminator from "../Images/Shop-Images/deluminator.jpg";
-// import felix from "../Images/Shop-Images/felix-felicis.jpg";
-// import firebolt from "../Images/Shop-Images/firebolt.png";
-// import gryffindor from "../Images/Shop-Images/gryffindor-robe1.jpg";
-import harryWand from "../Images/wands/harry-wand1.png";
-import hermioneWand from "../Images/wands/hermione-wand1.png";
-// import hufflepuff from "../Images/Shop-Images/hufflepuff-robe.jpg";
-// import cloak from "../Images/Shop-Images/invisibility-cloak.jpg";
-import lunaWand from "../Images/wands/luna-wand1.png";
-import malfoyWand from "../Images/wands/malfoy-wand1.png";
-// import map from "../Images/Shop-Images/map.jpg";
-import mcgonagallWand from "../Images/wands/mcgonagall-wand1.png";
-// import monsterBook from "../Images/Shop-Images/monster-book.jpg";
-// import nimbus from "../Images/Shop-Images/nimbus.jpg";
-// import phials1 from "../Images/Shop-Images/phials1.jpg";
-// import phials2 from "../Images/Shop-Images/phials2.jpg";
-// import ravenclaw from "../Images/Shop-Images/ravenclaw-robe.png";
-// import scale1 from "../Images/Shop-Images/scale1.jpg";
-// import scale2 from "../Images/Shop-Images/scale2.jpg";
-// import scale3 from "../Images/Shop-Images/scale3.jpg";
-// import slytherin from "../Images/Shop-Images/slytherin-robe.jpg";
-import snapeWand from "../Images/wands/snape-wand1.png";
-import owl from "../Images/Shop-Images/snowy-owl.jpg";
-import telescope1 from "../Images/Shop-Images/telescope1.jpg";
-import telescope2 from "../Images/Shop-Images/telescope2.png";
-// import timeTurner from "../Images/Shop-Images/time-turner.jpeg";
-import toad from "../Images/Shop-Images/toad.jpg";
-
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
-
-const shoppingList = [
-  {
-    name: "wand",
-    url: `${harryWand}`,
-    description:
-      "11 inches long. Made of holly. Possesses a phoenix feather core",
-    price: 10,
-    id: 1,
-  },
-  {
-    name: "wand",
-    url: `${hermioneWand}`,
-    description: "derp",
-    price: 25,
-    id: 2,
-  },
-  {
-    name: "wand",
-    url: `${lunaWand}`,
-    description: "derp",
-    price: 20,
-    id: 3,
-  },
-  {
-    name: "wand",
-    url: `${malfoyWand}`,
-    description: "derp",
-    price: 20,
-    id: 4,
-  },
-  {
-    name: "wand",
-    url: `${mcgonagallWand}`,
-    description: "derp",
-    price: 20,
-    id: 5,
-  },
-  {
-    name: "wand",
-    url: `${snapeWand}`,
-    description: "derp",
-    price: 20,
-    id: 6,
-  },
-  {
-    name: "cauldron",
-    url: `${cauldron1}`,
-    description: "derp",
-    price: 20,
-    id: 7,
-  },
-  {
-    name: "cauldron",
-    url: `${cauldron2}`,
-    description: "derp",
-    price: 20,
-    id: 8,
-  },
-  {
-    name: "cauldron",
-    url: `${cauldron3}`,
-    description: "derp",
-    price: 20,
-    id: 9,
-  },
-  {
-    name: "telescope",
-    url: `${telescope1}`,
-    description: "derp",
-    price: 20,
-    id: 9,
-  },
-  {
-    name: "telescope",
-    url: `${telescope2}`,
-    description: "derp",
-    price: 20,
-    id: 9,
-  },
-];
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import { shoppingList } from './shopping-fixtures'
+import { styled } from "@material-ui/core";
 
 export default function Shop(props) {
-  console.log(`${harryWand}`);
+  // const [favorited, setFavorited] = useState({})
+  // console.log({ favorited })
+
+  // const handleClick = id => event => {
+  //   setFavorited((prevState) => {
+  //     return {
+  //       ...prevState,
+  //       [id]: !prevState[id]
+  //     }
+  //   })
+  // }
+
+  // function handleClick(id) {
+  //   return (event) => {
+  //     event.preventDefault()
+  //   }
+  // }
+
   return (
-    <div className="shop-content">
+    <div className="shop-content" spacing={2}>
       <header className="shop-header">
-        <h2>Accio School Supplies</h2>
-        <ShoppingCartIcon />
+        <h1 style={{ marginLeft: '2.5em' }}>Accio School Supplies</h1>
+        <IconButton style={{ marginRight: '2.5em' }}>
+          <ShoppingCartIcon style={{ color: 'white' }} />
+        </IconButton>
       </header>
       <ol className="shop-list">
         <li>
@@ -163,27 +74,137 @@ export default function Shop(props) {
           />
         </li>
       </ol>
-      <div className="images-wrapper">
-        {shoppingList.map((item) => (
-          <div
-            key={item.id}
-            className="image"
-            style={{
-              backgroundImage: `url(${item.url})`,
-            }}
-          >
-            <div className="content-wrapper">
-              <div className="item-content heart-icon">
-                <FavoriteBorderIcon />
-              </div>
-              <div className="item-content item-description">
-                <p>{item.description}</p>
-                <p>${item.price}</p>
-              </div>
-            </div>
-          </div>
-        ))}
+      <div className="main">
+        <Grid container style={{
+          // backgroundColor: 'salmon'
+        }}>
+          {shoppingList.map((item) => (
+            <ShoppingItem
+              key={item.id}
+              url={item.url}
+              name={item.name}
+              description={item.description}
+              price={item.price}
+              id={item.id}
+            />
+            // <S item
+            //   key={item.id}
+            //   xs={10} sm={6} md={4}>
+            //   <ShoppingItem
+
+            //     item={item}
+            //   />
+            // </ShoppingItem>
+          ))
+          }
+        </Grid>
       </div>
-    </div>
+    </div >
   );
 }
+
+const ItemCard = styled(Grid)({
+})
+
+const ShoppingItem = ({
+  url,
+  name,
+  description,
+  price,
+  id,
+}) => {
+  const [favorited, setFavorited] = useState(false);
+
+  const handleClick = () => {
+    setFavorited(prev => !prev)
+  }
+  console.log({ url })
+  return (
+    <ItemCard
+      style={{
+        padding: 15,
+        position: 'relative',
+      }}
+      item
+      xs={12}
+      sm={6}
+      md={4}
+    >
+      <Grid
+        container
+        direction="column"
+        justify="center"
+        alignItems="center"
+        style={{
+          border: '1px solid black',
+        }}
+      >
+        <img src={url} />
+        <p>{description}</p>
+
+      </Grid>
+      <IconButton
+        style={{
+          position: 'absolute',
+          top: 20,
+          right: 20,
+        }}
+        onClick={handleClick}
+      >
+        {favorited ?
+          <FavoriteIcon style={{ color: '#7f0909' }} /> :
+          <FavoriteBorderIcon style={{ color: 'black' }} />
+        }
+      </IconButton>
+    </ItemCard>
+  )
+}
+
+// const ShoppingItem = ({ item }) => {
+//   const [favorited, setFavorited] = useState(false);
+
+//   const handleClick = () => {
+//     setFavorited(prev => !prev)
+//   }
+//   return (
+
+//     <Grid container
+//       className="image-wrapper"
+//     >
+//       <Grid item
+//         className="image"
+//         style={{
+//           backgroundImage: `url(${item.url})`,
+//         }}
+//       >
+//         {/* <Grid container className="content-wrapper"> */}
+//         <Grid item className="heart-icon">
+
+//           <IconButton
+//             onClick={handleClick}
+//           >
+//             {favorited ?
+//               < FavoriteIcon style={{ color: '#7f0909' }} /> :
+//               <FavoriteBorderIcon style={{ color: 'black' }} />
+//             }
+//           </IconButton>
+
+//         </Grid>
+//         <Grid container className="item-content">
+//           <Grid item
+//             className='item-description'
+//           >
+//             <p>{item.description}</p>
+//           </Grid>
+//           <Grid item
+//             className='item-price'>
+//             <p>${item.price}</p>
+//           </Grid>
+//         </Grid>
+//       </Grid>
+
+//       {/* </Grid> */}
+//     </Grid >
+
+//   )
+// }
