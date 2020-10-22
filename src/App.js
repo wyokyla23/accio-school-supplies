@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Invitation from "./Invitation";
 import SchoolList from "./SchoolList";
 import Shop from "./Shop";
+import Cart from './Cart'
 
 export default function App() {
   const [name, setName] = useState("");
@@ -15,14 +16,15 @@ export default function App() {
             name={name}
             setName={setName}
           />
-          ,
         </Route>
         <Route exact path="/schoolList">
           <SchoolList name={name} />
         </Route>
         <Route exact path="/shop">
-
           <Shop />
+        </Route>
+        <Route exact path='/cart'>
+          <Cart />
         </Route>
       </Switch>
     </div>

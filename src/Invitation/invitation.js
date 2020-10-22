@@ -37,7 +37,7 @@ export default function Invitation({
           />
         </label>
         <button
-          class="name-button"
+          className="name-button"
           type="submit"
           value="Submit"
         >

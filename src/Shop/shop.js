@@ -1,38 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
+import { useHistory } from "react-router-dom";
 
+import { makeStyles } from '@material-ui/core/styles'
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Grid from '@material-ui/core/Grid'
 import IconButton from '@material-ui/core/IconButton';
 import Checkbox from "@material-ui/core/Checkbox";
-import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import { shoppingList } from './shopping-fixtures'
-import { styled } from "@material-ui/core";
+import ShoppingItem from './shop-item'
+
+const useStyles = makeStyles({
+  root: {},
+
+})
+
 
 export default function Shop(props) {
-  // const [favorited, setFavorited] = useState({})
-  // console.log({ favorited })
-
-  // const handleClick = id => event => {
-  //   setFavorited((prevState) => {
-  //     return {
-  //       ...prevState,
-  //       [id]: !prevState[id]
-  //     }
-  //   })
-  // }
-
-  // function handleClick(id) {
-  //   return (event) => {
-  //     event.preventDefault()
-  //   }
-  // }
+  const history = useHistory();
 
   return (
     <div className="shop-content" spacing={2}>
       <header className="shop-header">
         <h1 style={{ marginLeft: '2.5em' }}>Accio School Supplies</h1>
-        <IconButton style={{ marginRight: '2.5em' }}>
+        <IconButton
+          onClick={() => history.push('../Cart')}
+          style={{ marginRight: '2.5em' }}>
           <ShoppingCartIcon style={{ color: 'white' }} />
         </IconButton>
       </header>
@@ -103,62 +95,8 @@ export default function Shop(props) {
   );
 }
 
-const ItemCard = styled(Grid)({
-})
 
-const ShoppingItem = ({
-  url,
-  name,
-  description,
-  price,
-  id,
-}) => {
-  const [favorited, setFavorited] = useState(false);
 
-  const handleClick = () => {
-    setFavorited(prev => !prev)
-  }
-  console.log({ url })
-  return (
-    <ItemCard
-      style={{
-        padding: 15,
-        position: 'relative',
-      }}
-      item
-      xs={12}
-      sm={6}
-      md={4}
-    >
-      <Grid
-        container
-        direction="column"
-        justify="center"
-        alignItems="center"
-        style={{
-          border: '1px solid black',
-        }}
-      >
-        <img src={url} />
-        <p>{description}</p>
-
-      </Grid>
-      <IconButton
-        style={{
-          position: 'absolute',
-          top: 20,
-          right: 20,
-        }}
-        onClick={handleClick}
-      >
-        {favorited ?
-          <FavoriteIcon style={{ color: '#7f0909' }} /> :
-          <FavoriteBorderIcon style={{ color: 'black' }} />
-        }
-      </IconButton>
-    </ItemCard>
-  )
-}
 
 // const ShoppingItem = ({ item }) => {
 //   const [favorited, setFavorited] = useState(false);
