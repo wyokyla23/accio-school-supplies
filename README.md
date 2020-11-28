@@ -6,7 +6,7 @@ A list to guide you as you shop and add items to your shopping cart.
 
 ![invitation](https://user-images.githubusercontent.com/62663716/100527434-14e0d100-3198-11eb-8dcb-7bc8a06acf78.png)
 
-![2020-10-18](https://user-images.githubusercontent.com/62663716/96388482-b1ae5880-116e-11eb-97aa-290c924b6a62.png)
+![accioStore](https://user-images.githubusercontent.com/62663716/100527442-2b872800-3198-11eb-8e98-944c9deebc97.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
